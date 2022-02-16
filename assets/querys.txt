@@ -1,0 +1,9 @@
+-- Lock tables compras write;
+-- Does idPo in compras must not be AUTO_INCREMENT?
+
+$max = SELECT MAX( idPo ) FROM compras;
+
+INSERT INTO compras( idPo, idUsuario, idSupplier, fechaPo, cotización)
+VALUES ($max+1 , , , , );
+
+-- Unlock tables

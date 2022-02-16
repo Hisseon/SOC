@@ -1,0 +1,126 @@
+.arriba {
+  vertical-align: top;
+}
+.abajo {
+  vertical-align: bottom;
+}
+.text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9;
+  font-weight: bold;
+}
+.subtextB {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7;
+  font-weight: bold;
+}
+
+.subtext {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7;
+}
+.gray {
+  background-color: #d9d9d9;
+}
+.focom {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6;
+  font-weight: bold;
+}
+.purchase {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10;
+  font-weight: bold;
+}
+.tableB {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.tableB td {
+  border: 1px solid black;
+}
+.tableT {
+  margin-top: 3px;
+  margin-left: 60%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.tableT td {
+  border: 1px solid black;
+}
+.center {
+  text-align: center;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.tableP {
+  width: 100%;
+  border: 1.5px solid black;
+  border-collapse: collapse;
+}
+.tableP td {
+  border: 1.5px solid black;
+  padding: 5px;
+}
+.tableP th {
+  text-align: left;
+  vertical-align: top;
+  border: 1.5px solid black;
+}
+#detalle_productos tr:nth-child(even) {
+  background: #d9d9d9;
+}
+
+.tableA td {
+  height: 10px;
+}
+
+.comments {
+  width: 100%;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+.comments td {
+  border: 2px solid black;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tablaAnidada {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tablaAnidada td {
+  border: none;
+}
+
+.estatus {
+  padding: 10px;
+  color: white;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.pendiente{
+ background-color: #6c757d;
+}
+
+.aprobado{
+  background-color: #28a745;
+}
+
+.rechazado{
+  background-color: #dc3545;
+}
+
+.noBordes{
+  border: none !important;
+}

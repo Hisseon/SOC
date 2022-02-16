@@ -1,0 +1,90 @@
+CREATE TABLE usuarios(
+    idUsuario INT NOT NULL AUTO_INCREMENT,
+    userName VARCHAR(20),
+    passw VARCHAR(20),
+    nombre VARCHAR(20),
+    apellido VARCHAR(20),
+    rol VARCHAR(10),
+    puesto VARCHAR(20),
+    PRIMARY KEY (idUsuario)
+);
+
+CREATE TABLE proveedor(
+    idSupplier INT NOT NULL AUTO_INCREMENT,
+    nombreFiscal VARCHAR(20),
+    nombreComercial VARCHAR(20),
+    negocio VARCHAR(20),
+    numeroCliente VARCHAR(20),
+    rfc VARCHAR(13),
+    correo VARCHAR(20),
+    direccion VARCHAR(50),
+    ciudad VARCHAR(50),
+    estado VARCHAR(50),
+    codigoPostal VARCHAR(10),
+    numeroTel VARCHAR(20),
+    tipoCompañia VARCHAR(20),
+    moneda VARCHAR(10),
+    terminoPago INT,
+    tipotrans VARCHAR(10),
+    provfijo VARCHAR(2),
+    rfcFile VARCHAR(100),
+    comprobanteFile VARCHAR(100),
+    ecuenta VARCHAR(100),
+    opinionPositiva VARCHAR(100),
+    PRIMARY KEY (idSupplier)
+);
+
+CREATE TABLE compras(
+    idPo INT NOT NULL AUTO_INCREMENT,
+    idUsuario INT NOT NULL,
+    idSupplier INT NOT NULL,
+    fechaPo DATE,
+    cotización VARCHAR(100),
+    estatus VARCHAR(10),
+    motivo VARCHAR(100),
+    PRIMARY KEY (idPo),
+    FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario),
+    FOREIGN KEY (idSupplier) REFERENCES proveedor(idSupplier)
+);
+
+CREATE TABLE facturas(
+    idInvoice INT NOT NULL AUTO_INCREMENT,
+    factura VARCHAR(100),
+    fechaFacturación DATE,
+    xml VARCHAR (100),
+    PRIMARY KEY (idInvoice)
+);
+
+CREATE TABLE productos(
+    idPro INT NOT NULL AUTO_INCREMENT,
+    idPO INT,
+    itemNumber VARCHAR(20),
+    description1 VARCHAR(50),
+    description2 VARCHAR(50),
+    deliveryDate DATE,
+    quantity int,
+    UOM VARCHAR(2),
+    unitCost DECIMAL(8,4),
+    extendedPrice DECIMAL(8,4),
+    PRIMARY KEY(idPro),
+    FOREIGN KEY (idPo) REFERENCES compras(idPo)
+);
+
+CREATE TABLE productosTotal(
+    idPt INT NOT NULL AUTO_INCREMENT,
+    idPo INT, 
+    total DECIMAL(6,4),
+    otherComments VARCHAR(100),
+    PRIMARY KEY (idPt),
+    FOREIGN KEY (idPo) REFERENCES compras(idPo)
+);
+
+CREATE TABLE pago(
+    idPago INT NOT NULL AUTO_INCREMENT,
+    idPo INT,
+    idFactura INT,
+    comprobante VARCHAR(100),
+    PRIMARY KEY (idPago)
+);
+
+
